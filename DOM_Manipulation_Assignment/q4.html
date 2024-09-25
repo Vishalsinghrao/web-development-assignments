@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove List Item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Items</h1>
+    <ul id="itemList">
+        <li>Item 1 <button class="removeButton">Remove</button></li>
+        <li>Item 2 <button class="removeButton">Remove</button></li>
+        <li>Item 3 <button class="removeButton">Remove</button></li>
+    </ul>
+
+    <script>
+        
+        function removeListItem(event) {
+            const item = event.target.parentElement; 
+            item.remove(); 
+        }
+
+        
+        const removeButtons = document.querySelectorAll('.removeButton');
+
+       
+        removeButtons.forEach(button => {
+            button.addEventListener('click', removeListItem);
+        });
+    </script>
+</body>
+</html>

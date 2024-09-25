@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 100px;
+            width: 100px;
+            background-color: blueviolet;
+        }
+
+        #box1 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="box" onclick="hideElement()"> box</button>
+
+    </div>
+    <div>
+        <button id="box1" onclick="colorElement()"> box</button>
+
+    </div>
+    <script>
+
+        const box = document.getElementById('box')
+        const hideElement = () => {
+            box.classList.add('hidden');
+        }
+
+        const box1 = document.getElementById('box1')
+        const colorElement = () => {
+
+            document.getElementById('box1').style.backgroundColor = 'green'
+
+
+        }
+    </script>
+</body>
+
+</html>

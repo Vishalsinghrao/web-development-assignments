@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Input Value</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Value Display</h1>
+    <input type="text" id="inputField" placeholder="Enter something...">
+    <button id="displayButton">Display Value</button>
+    
+    <h2>Your Input:</h2>
+    <div id="output"></div>
+
+    <script>
+        
+        function displayInputValue() {
+            const inputValue = document.getElementById('inputField').value; 
+            const outputDiv = document.getElementById('output');
+
+            
+            outputDiv.textContent = inputValue ? inputValue : "Please enter a value.";
+        }
+
+        
+        const displayButton = document.getElementById('displayButton');
+
+        
+        displayButton.addEventListener('click', displayInputValue);
+    </script>
+</body>
+</html>

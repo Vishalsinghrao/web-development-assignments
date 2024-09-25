@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Information</h1>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="message" class="message"></div>
+
+    <script>
+        
+        function handleSubmit(event) {
+            event.preventDefault(); 
+
+            const name = document.getElementById('name').value; 
+            const messageDiv = document.getElementById('message'); 
+
+            
+            messageDiv.textContent = `Thank you for submitting, ${name}!`;
+        }
+
+        
+        const form = document.getElementById('userForm');
+        form.addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>

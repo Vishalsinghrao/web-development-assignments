@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add List Item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My List</h1>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <input type="text" id="itemText" placeholder="Enter list item text">
+    <button id="addButton">Add Item</button>
+
+    <script>
+       
+        const myList = document.getElementById('myList');
+        const addButton = document.getElementById('addButton');
+        const itemText = document.getElementById('itemText');
+
+       
+        function addListItem() {
+            const text = itemText.value; 
+            if (text.trim() === "") {
+                alert("Please enter some text."); 
+                return;
+            }
+
+            const newListItem = document.createElement('li'); 
+            newListItem.textContent = text; 
+            myList.appendChild(newListItem); 
+
+            itemText.value = ""; 
+        }
+
+        
+        addButton.addEventListener('click', addListItem);
+    </script>
+</body>
+</html>

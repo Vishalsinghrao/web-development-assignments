@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Visibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hidden {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Toggle Visibility Example</h1>
+    <div id="toggleElement" class="hidden">
+        This is a hidden message that will be shown or hidden when you click the button.
+    </div>
+    <button id="toggleButton">Toggle Message</button>
+
+    <script>
+       
+        function toggleVisibility() {
+            const element = document.getElementById('toggleElement');
+            element.classList.toggle('hidden'); 
+        }
+
+       
+        const toggleButton = document.getElementById('toggleButton');
+
+       
+        toggleButton.addEventListener('click', toggleVisibility);
+    </script>
+</body>
+</html>

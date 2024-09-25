@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve InnerHTML and TextContent</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Retrieve InnerHTML and TextContent</h1>
+    <div id="content">
+        <p>This is a <strong>sample</strong> text with <em>HTML</em> tags.</p>
+    </div>
+    <button id="retrieveButton">Retrieve Values</button>
+    
+    <h2>Retrieved Values:</h2>
+    <div class="output">
+        <p><strong>InnerHTML:</strong> <span id="innerHTMLValue"></span></p>
+        <p><strong>TextContent:</strong> <span id="textContentValue"></span></p>
+    </div>
+
+    <script>
+        
+        function getInnerHTML() {
+            const contentDiv = document.getElementById('content');
+            return contentDiv.innerHTML; 
+        }
+
+        
+        function getTextContent() {
+            const contentDiv = document.getElementById('content');
+            return contentDiv.textContent; 
+        }
+
+        
+        function displayValues() {
+            const innerHTMLValue = getInnerHTML(); 
+            const textContentValue = getTextContent(); 
+
+           
+            document.getElementById('innerHTMLValue').textContent = innerHTMLValue;
+            document.getElementById('textContentValue').textContent = textContentValue;
+        }
+
+        
+        const retrieveButton = document.getElementById('retrieveButton');
+
+        
+        retrieveButton.addEventListener('click', displayValues);
+    </script>
+</body>
+</html>
